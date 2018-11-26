@@ -1,12 +1,13 @@
 class Parcel
 
-  def initialize(height, width, length, weight, distance, speed)
+  def initialize(height, width, length, weight, distance, speed, coupon)
     @height = height.to_i
     @width = width.to_i
     @length = length.to_i
     @weight = weight.to_i
     @distance = distance.to_i
     @speed = speed.to_i
+    @coupon = coupon
   end
 
   def volume
@@ -38,5 +39,14 @@ class Parcel
     distance()
     speed()
     @cost = (((@volume * @weight) + @speed) * @distance) / 10
+    discount()
+  end
+
+  def discount
+    if @coupon === "superdeal"
+      @cost = @cost - 2
+    else
+      @cost
+    end
   end
 end
