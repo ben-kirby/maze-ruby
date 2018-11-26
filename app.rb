@@ -19,6 +19,5 @@ get ("/output") do
   parcel = Parcel.new(@height, @width, @length, @weight, @distance, @speed)
 
   @cost = parcel.cost_to_ship
-  binding.pry
   erb(:output)
 end

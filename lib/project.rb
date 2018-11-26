@@ -13,8 +13,30 @@ class Parcel
     @volume = @height * @width * @length
   end
 
+  def distance
+    if @distance < 50
+      @distance = 1
+    elsif @distance >= 50 && @distance < 500
+      @distance = 2
+    else
+      @distance = 3
+    end
+  end
+
+  def speed
+    if @speed < 2
+      @speed = 10
+    elsif @speed >= 2 && @speed < 7
+      @speed = 5
+    else
+      @speed = 2
+    end
+  end
+
   def cost_to_ship
     volume()
-    @cost = ((@volume * @speed) + @distance) / 100
+    distance()
+    speed()
+    @cost = (((@volume * @weight) + @speed) * @distance) / 10
   end
 end
