@@ -36,15 +36,18 @@ class Parcel
   end
 
   def cost_to_ship
+    @wrapping_cost = 0
     volume()
     distance()
     speed()
-    @cost = (((@volume * @weight) + @speed) * @distance) / 10
+    @shipping_cost = (((@volume * @weight) + @speed) * @distance) / 10
     discount()
-    if @wrapping == "on"
+    if @wrapping === "true"
       surface_area()
+      @total_cost
+    else
+      @shipping_cost
     end
-    @cost
   end
 
   def discount
@@ -63,6 +66,15 @@ class Parcel
     surface_area = (side1 + side2 + side3) * 2
 
     @wrapping_cost = surface_area / 20
-    @cost = @wrapping_cost + @cost
+    @total_cost = @wrapping_cost + @shipping_cost
+    @wrapping_cost
+  end
+
+  def shipping_cost
+    @shipping_cost
+  end
+
+  def wrapping_cost
+    @wrapping_cost
   end
 end

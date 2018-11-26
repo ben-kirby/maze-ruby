@@ -20,7 +20,10 @@ get ("/output") do
 
   parcel = Parcel.new(@height, @width, @length, @weight, @distance, @speed, @coupon, @wrapping)
 
-  @cost = parcel.cost_to_ship
-  binding.pry
+
+  @total_cost = parcel.cost_to_ship
+  @shipping_cost = parcel.shipping_cost
+  @wrapping_cost = parcel.wrapping_cost
+  # binding.pry
   erb(:output)
 end
