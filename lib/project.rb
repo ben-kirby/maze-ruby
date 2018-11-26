@@ -52,9 +52,11 @@ class Parcel
 
   def discount
     if @coupon === "superdeal"
-      @cost = @cost - 2
+      @shipping_cost = @shipping_cost - 2
+    elsif @coupon === "supersuperdeal"
+      @shipping_cost = @shipping_cost - 5
     else
-      @cost
+      @shipping_cost
     end
   end
 

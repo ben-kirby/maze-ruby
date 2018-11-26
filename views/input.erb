@@ -1,7 +1,7 @@
 <h1> Enter in your shipping details <i class="em em-truck"></i></h1>
 
   <form action="/output">
-    <h3>Enter dimensions</h3>
+    <h3>Enter dimensions:</h3>
     <div class="form-group">
       <label for="height">Height (in)</label>
       <input type="text" name="height" id="height">
@@ -12,15 +12,13 @@
       <label for="weight">Weight (lb)</label>
       <input type="text" name="weight" id="weight">
     </div>
+    <h3>Shipping Details:</h3>
     <label for="distance">How far are we shipping it?(miles)</label>
     <input type="text" name="distance" id="distance">
 <br>
       <label for="speed">In how many days do you need it?</label>
       <input type="text" name="speed" id="speed">
 <br>
-      <label for="coupon">Do you have a coupon code???</label>
-      <input type="text" name="coupon" id="coupon">
-      <br>
       <div class="form-check">
         <input type="hidden" name="wrapping" value="false">
         <input type="checkbox" id="wrapping" name="wrapping" value="true">
@@ -28,6 +26,9 @@
           Would you like us to wrap it?
         </label>
       </div>
-      <button type="submit" name="Submit">Submit!</button>
+      <label for="coupon">Do you have a coupon code???</label>
+      <input type="text" name="coupon" id="coupon">
+      <br>
+      <button type="submit" class="btn btn-danger" name="Submit">Submit!</button>
     </div>
   </form>
