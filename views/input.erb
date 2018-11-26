@@ -3,16 +3,16 @@
   <form action="/output">
     <h3>Enter dimensions</h3>
     <div class="form-group">
-      <label for="height">Height</label>
+      <label for="height">Height (in)</label>
       <input type="text" name="height" id="height">
-      <label for="length">Length</label>
+      <label for="length">Length (in)</label>
       <input type="text" name="length" id="length">
-      <label for="width">Width</label>
+      <label for="width">Width (in)</label>
       <input type="text" name="width" id="width">
-      <label for="weight">Weight</label>
+      <label for="weight">Weight (lb)</label>
       <input type="text" name="weight" id="weight">
     </div>
-    <label for="distance">How far are we shipping it (miles)?</label>
+    <label for="distance">How far are we shipping it?(miles)</label>
     <input type="text" name="distance" id="distance">
 <br>
       <label for="speed">In how many days do you need it?</label>
@@ -21,6 +21,12 @@
       <label for="coupon">Do you have a coupon code???</label>
       <input type="text" name="coupon" id="coupon">
       <br>
+      <div class="form-check">
+        <input type="checkbox" id="wrapping" name="wrapping">
+        <label class="form-check-label" for="defaultCheck1">
+          Would you like us to wrap it?
+        </label>
+      </div>
       <button type="submit" name="Submit">Submit!</button>
     </div>
   </form>

@@ -16,9 +16,11 @@ get ("/output") do
   @distance = params.fetch("distance")
   @speed = params.fetch("speed")
   @coupon = params.fetch("coupon")
+  @wrapping = params.fetch("wrapping")
 
-  parcel = Parcel.new(@height, @width, @length, @weight, @distance, @speed, @coupon)
+  parcel = Parcel.new(@height, @width, @length, @weight, @distance, @speed, @coupon, @wrapping)
 
   @cost = parcel.cost_to_ship
+  binding.pry
   erb(:output)
 end
