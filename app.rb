@@ -1,29 +1,40 @@
 require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
-require('./lib/project')
+require('./lib/sphynx')
 require('pry')
 
 get("/") do
   erb(:input)
 end
 
-get ("/output") do
-  @height = params.fetch("height")
-  @width = params.fetch("width")
-  @length = params.fetch("length")
-  @weight = params.fetch("weight")
-  @distance = params.fetch("distance")
-  @speed = params.fetch("speed")
-  @coupon = params.fetch("coupon")
-  @wrapping = params.fetch("wrapping")
+post ("/output1") do
+  @answer = params.fetch("riddle1")
 
-  parcel = Parcel.new(@height, @width, @length, @weight, @distance, @speed, @coupon, @wrapping)
+  questions = Sphynx.new(@answer)
+ if questions.riddle_one == true
+  erb(:riddle2)
+  else erb(:fail)
+  end
+end
 
+post ("/output2") do
+  @answer = params.fetch("riddle2")
 
-  @total_cost = parcel.cost_to_ship
-  @shipping_cost = parcel.shipping_cost
-  @wrapping_cost = parcel.wrapping_cost
-  # binding.pry
+  questions = Sphynx.new(@answer)
+ if questions.riddle_two == true
+  erb(:riddle3)
+  else erb(:fail)
+  end
+end
+
+post ("/output3") do
+  @answer = params.fetch("riddle3")
+
+  questions = Sphynx.new(@answer)
+ if questions.riddle_three == true
   erb(:output)
+  else erb(:fail)
+  end
+
 end

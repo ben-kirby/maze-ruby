@@ -1,34 +1,23 @@
-<h1> Enter in your shipping details <i class="em em-truck"></i></h1>
+<h1>Riddle 1!</h1>
+<p>Everyone has me but nobody can lose me. What am I?</p>
 
-  <form action="/output">
-    <h3>Enter dimensions:</h3>
-    <div class="form-group">
-      <label for="height">Height (in)</label>
-      <input type="text" name="height" id="height">
-      <label for="length">Length (in)</label>
-      <input type="text" name="length" id="length">
-      <label for="width">Width (in)</label>
-      <input type="text" name="width" id="width">
-      <label for="weight">Weight (lb)</label>
-      <input type="text" name="weight" id="weight">
-    </div>
-    <h3>Shipping Details:</h3>
-    <label for="distance">How far are we shipping it?(miles)</label>
-    <input type="text" name="distance" id="distance">
+<form action="/output1" method="post">
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="riddle1" id="love" value='1'>
+  <label class="form-check-label" for="riddle1">
+    Love
+  </label>
 <br>
-      <label for="speed">In how many days do you need it?</label>
-      <input type="text" name="speed" id="speed">
+  <input class="form-check-input" type="radio" name="riddle1" id="shadow" value='2'>
+  <label class="form-check-label" for="riddle1">
+    A Shadow
+  </label>
 <br>
-      <div class="form-check">
-        <input type="hidden" name="wrapping" value="false">
-        <input type="checkbox" id="wrapping" name="wrapping" value="true">
-        <label class="form-check-label" for="defaultCheck1">
-          Would you like us to wrap it?
-        </label>
-      </div>
-      <label for="coupon">Do you have a coupon code???</label>
-      <input type="text" name="coupon" id="coupon">
-      <br>
-      <button type="submit" class="btn btn-danger" name="Submit">Submit!</button>
-    </div>
-  </form>
+  <input class="form-check-input" type="radio" name="riddle1" id="personality" value='3'>
+  <label class="form-check-label" for="riddle1">
+    A personality
+  </label>
+<br>
+  <button type="submit" class="btn btn-danger" name="Submit">Submit!</button>
+<br>
+</form>
