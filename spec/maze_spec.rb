@@ -1,5 +1,5 @@
 require('rspec')
-require('sphynx')
+require('maze')
 require('pry')
 
 describe(Sphynx)do
